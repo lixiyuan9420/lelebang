@@ -327,6 +327,7 @@ const user = {
       result = retCode.ServerError;
       result.msg = "服务端错误";
     } else {
+      console.log(bkdata.length)
       if (bkdata.length > 0) {
         result = retCode.Success;
         result.msg = "获取成功";
