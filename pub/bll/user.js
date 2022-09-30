@@ -381,7 +381,7 @@ const user = {
         "hex",
         true
       );
-      if (form.password == form.checkPwd) {
+      if (form.password === form.checkPwd) {
         let result = retCode.Success;
         if (!uPattern.test(form.username)) {
           result = retCode.IncorrectFormat;
@@ -400,7 +400,7 @@ const user = {
               a_id: form.a_id,
               phone: form.phone,
               deadline: form.deadline,
-              role_id: form.dtype == 1 ? 1 : 2
+              role_id: form.dtype === 1 ? 1 : 2
             });
             if (res.errno) {
               return {
