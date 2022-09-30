@@ -2,7 +2,7 @@
 const crypto = require('crypto');
 const _algorithm = 'aes-256-cbc';
 const _iv = '73546548679573675465765897096532';
-const ivBuffer = new Buffer(_iv, 'hex');
+const ivBuffer = Buffer.from(_iv, 'hex');
 const ivkey = Buffer.from('15464336451324535212156486623224', 'utf8').toString('hex');
 let secrets = {};
 /**
@@ -16,14 +16,14 @@ secrets.encrypt = function (data, dataEncoding, key, keyEncoding, padding) {
     if (key instanceof Buffer) {
         keyBuf = key;
     } else {
-        keyBuf = new Buffer(key, keyEncoding);
+        keyBuf = Buffer.from(key, keyEncoding);
     }
 
     let dataBuf = null;
     if (data instanceof Buffer) {
         dataBuf = data;
     } else {
-        dataBuf = new Buffer(data, dataEncoding);
+        dataBuf = Buffer.from(data, dataEncoding);
     }
 
     let cipher = crypto.createCipheriv(_algorithm, keyBuf, ivBuffer);
@@ -45,14 +45,14 @@ secrets.decypt = function (data, dataEncoding, key, keyEncoding, padding) {
     if (key instanceof Buffer) {
         keyBuf = key;
     } else {
-        keyBuf = new Buffer(key, keyEncoding);
+        keyBuf = Buffer.from(key, keyEncoding);
     }
 
     let dataBuf = null;
     if (data instanceof Buffer) {
         dataBuf = data;
     } else {
-        dataBuf = new Buffer(data, dataEncoding);
+        dataBuf = Buffer.from(data, dataEncoding);
     }
 
     var decipher = crypto.createDecipheriv(_algorithm, keyBuf, ivBuffer);
