@@ -323,11 +323,11 @@ const user = {
   async getInfoByArea(ctx) {
     let result = retCode.Success;
     let bkdata = await usermodel.getInfoByArea(ctx.request.body.aid);
+    console.log(ctx.request.body)
     if (bkdata.errno) {
       result = retCode.ServerError;
       result.msg = "服务端错误";
     } else {
-      console.log(bkdata.length)
       if (bkdata.length > 0) {
         result = retCode.Success;
         result.msg = "获取成功";
