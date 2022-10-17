@@ -74,7 +74,7 @@ const development = {
       second = String(String(0) + String(second));
     }
     if (msecond < 10) {
-      msecond = String(String(00) + String(second));
+      msecond = String(String(0) + String(second));
     } else if (msecond >= 10 && msecond < 100) {
       msecond = String(String(0) + String(second));
     }
