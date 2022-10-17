@@ -35,8 +35,8 @@ const development = {
 
   // WXMP_TOKEN: 'hubanghuzhudaitini2018',
 
-  uploadPath: "http://www.zgb-wykb.cn/uploads/files/", //图片路径
-  imagesPath: "http://www.zgb-wykb.cn/images/",
+  uploadPath: "https://www.zgb-wykb.cn/uploads/files/", //图片路径
+  imagesPath: "https://www.zgb-wykb.cn/images/",
 
 
   userType: {
